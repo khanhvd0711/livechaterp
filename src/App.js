@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import firebase from 'firebase';
 import MessageList from './components/MessageList';
@@ -10,13 +10,14 @@ import MessageBox from './components/MessageBox';
 class App extends Component {
     constructor(props) {
         super(props);
+        // Initialize Firebase
         var config = {
-            apiKey: "AIzaSyBO3dF3BmWAJZtvM1F2B_E-HBTLCJWt51s",
-            authDomain: "thienanblog-2757e.firebaseapp.com",
-            databaseURL: "https://thienanblog-2757e.firebaseio.com",
-            projectId: "thienanblog-2757e",
-            storageBucket: "thienanblog-2757e.appspot.com",
-            messagingSenderId: "854038793777"
+            apiKey: "AIzaSyD4pmMmxNFHmhQqFWp5MKEKaiJMDyx80r4",
+            authDomain: "live-chat-12bab.firebaseapp.com",
+            databaseURL: "https://live-chat-12bab.firebaseio.com",
+            projectId: "live-chat-12bab",
+            storageBucket: "",
+            messagingSenderId: "641599993586"
         };
         firebase.initializeApp(config);
     }
