@@ -8,7 +8,7 @@ class MessageList extends Component {
         this.state  = {
             chatlist: []
         };
-        let app =this.props.db.database().ref('chatlist');
+        let app =this.props.db.database().ref('/chatlist');
 
         app.on('value', snapshot => {
             this.getData(snapshot.val());
