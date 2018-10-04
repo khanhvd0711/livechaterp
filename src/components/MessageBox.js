@@ -22,7 +22,7 @@ class MessageBox extends Component{
         if(e.keyCode === 13 && (e.target.value).trim() !== ''){
             e.preventDefault();
             var ip = require("ip");
-            console.log(ip.address());
+            ///console.log(ip.address());
             let dbCon = this.props.db.database().ref('/chatlist');
             dbCon.push({
                 message: (e.target.value).trim(),
