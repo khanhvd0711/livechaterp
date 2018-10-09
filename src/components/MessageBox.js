@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {firebaseApp} from "../config/firebase";
 
 class MessageBox extends Component{
 
@@ -10,7 +11,6 @@ class MessageBox extends Component{
             chatlist: '',
         };
 
-        //this.setState({});}
     }
 
     onChange(e){
@@ -21,13 +21,13 @@ class MessageBox extends Component{
     onKeyup(e){
         if(e.keyCode === 13 && (e.target.value).trim() !== ''){
             e.preventDefault();
-            var ip = require("ip");
-            ///console.log(ip.address());
-            let dbCon = this.props.db.database().ref('/chatlist');
+                let ip = require("ip");
+                let dbCon = firebaseApp.database().ref('/chatlist');
             dbCon.push({
                 message: (e.target.value).trim(),
-                time: new  Date().toLocaleString(),
-                ipAddress: ip.address()
+                time: new Date().toLocaleString(),
+                ipAddress: ip.address(),
+                // user: user
             });
             this.setState({
                 chatlist: '',
@@ -35,16 +35,17 @@ class MessageBox extends Component{
         }
     }
     render(){
+
         return(
             <form>
-            <textarea
-                className="textarea"
-                placeholder="Type a message"
-                cols="100"
-                onChange={this.onChange}
-                onKeyUp={this.onKeyup}
-                value={this.state.chatlist}>
-              </textarea>
+                <textarea
+                    className="textarea"
+                    placeholder="Type a message"
+                    cols="100"
+                    onChange={this.onChange}
+                    onKeyUp={this.onKeyup}
+                    value={this.state.chatlist}>
+                </textarea>
             </form>
         )
     }
