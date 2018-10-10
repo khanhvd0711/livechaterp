@@ -28,6 +28,14 @@ class Login extends Component {
     signup(e){
         e.preventDefault();
         firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+            let ip = require("ip");
+            let dbCon = firebaseApp.database().ref('/users');
+            dbCon.push({
+                email: this.state.email,
+                password: this.state.password,
+                ipAddress: ip.address(),
+                time: new Date().toLocaleString(),
+            });
         }).then((u)=>{console.log(u)})
             .catch((error) => {
                 console.log(error);
