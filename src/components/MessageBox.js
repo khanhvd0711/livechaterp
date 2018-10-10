@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {firebaseApp} from "../config/firebase";
+import firebaseApp from "../config/firebase";
 
 class MessageBox extends Component{
 

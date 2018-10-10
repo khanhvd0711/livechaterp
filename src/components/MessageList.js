@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import Message from './Message';
 import _ from 'lodash';
-import {firebaseApp} from "../config/firebase";
+import firebaseApp from "../config/firebase";
 
 class MessageList extends Component {
     constructor(props){
         super(props);
         this.state  = {
+            authenticated: false,
             chatlist: []
         };
         let app = firebaseApp.database().ref('/chatlist');
@@ -14,12 +15,6 @@ class MessageList extends Component {
         app.on('value', snapshot => {
             this.getData(snapshot.val());
         });
-    }
-
-    componentDidUpdate() {
-        // There is a new message in the state, scroll to bottom of list
-        const objDiv = document.getElementById('messageList');
-        objDiv.scrollTop = objDiv.scrollHeight;
     }
 
     getData(values){
@@ -39,7 +34,6 @@ class MessageList extends Component {
 
 
     render(){
-
         let messageNodes = this.state.chatlist.map((message, index) => {
             return (
                 <div key={ index } className="card message ">
@@ -53,7 +47,7 @@ class MessageList extends Component {
             )
         });
         return (
-            <div id="messageList">
+            <div>
                 {messageNodes}
             </div>
         );
