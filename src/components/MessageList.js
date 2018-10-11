@@ -18,12 +18,11 @@ class MessageList extends Component {
     }
 
     getData(values){
-        let messagesVal = values;
-        let chatlist = _(messagesVal)
+        let chatlist = _(values)
             .keys()
-            .map(messageKey => {
-                let cloned = _.clone(messagesVal[messageKey]);
-                cloned.key = messageKey;
+            .map($key => {
+                let cloned = _.clone(values[$key]);
+                cloned.key = $key;
                 return cloned;
             })
             .value();
