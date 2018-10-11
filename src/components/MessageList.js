@@ -10,13 +10,13 @@ class MessageList extends Component {
             authenticated: false,
             chatlist: []
         };
+    }
+    componentDidMount() {
         let app = firebaseApp.database().ref('/chatlist');
-
         app.on('value', snapshot => {
             this.getData(snapshot.val());
         });
     }
-
     getData(values){
         let messagesVal = values;
         let chatlist = _(messagesVal)
@@ -39,7 +39,7 @@ class MessageList extends Component {
                 <div key={ index } className="card message ">
                     <div className="card-content">
                         <div>
-                            <b className="name-key pull-left"> {message.userId} </b>
+                            <b className="name-key pull-left"> {message.email} </b>
                             <i className="pull-left"> ({ message.time} ):</i>
                         </div>
                         <div className="message">{message.message}</div>

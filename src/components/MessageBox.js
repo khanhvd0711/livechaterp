@@ -10,7 +10,6 @@ class MessageBox extends Component{
         this.state = {
             chatlist: '',
         };
-
     }
 
     onChange(e){
@@ -27,7 +26,7 @@ class MessageBox extends Component{
                 message: (e.target.value).trim(),
                 time: new Date().toLocaleString(),
                 ipAddress: ip.address(),
-                // user: user
+                email: localStorage.email
             });
             this.setState({
                 chatlist: '',
@@ -35,7 +34,6 @@ class MessageBox extends Component{
         }
     }
     render(){
-
         return(
             <form>
                 <textarea
