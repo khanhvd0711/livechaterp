@@ -13,11 +13,11 @@ class MessageList extends Component {
         let app = firebaseApp.database().ref('/chatlist');
 
         app.on('value', snapshot => {
-            this.getData(snapshot.val());
+            this.setData(snapshot.val());
         });
     }
 
-    getData(values){
+    setData(values){
         let chatlist = _(values)
             .keys()
             .map($key => {
