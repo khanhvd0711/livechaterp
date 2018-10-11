@@ -5,10 +5,7 @@ import Header from './components/Header';
 import MessageBox from './components/MessageBox';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        // this.logout = this.logout.bind(this);
-    }
+
     componentWillUnmount(){
         this.logout();
     }

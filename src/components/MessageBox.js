@@ -22,15 +22,15 @@ class MessageBox extends Component{
             e.preventDefault();
                 let ip = require("ip");
                 let dbCon = firebaseApp.database().ref('/chatlist');
-            dbCon.push({
-                message: (e.target.value).trim(),
-                time: new Date().toLocaleString(),
-                ipAddress: ip.address(),
-                email: localStorage.email
-            });
-            this.setState({
-                chatlist: '',
-            });
+                dbCon.push({
+                    message: (e.target.value).trim(),
+                    time: new Date().toLocaleString(),
+                    ipAddress: ip.address(),
+                    email: localStorage.email
+                });
+                this.setState({
+                    chatlist: '',
+                });
         }
     }
     render(){

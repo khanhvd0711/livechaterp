@@ -31,6 +31,7 @@ class Home extends Component {
             if (user) {
                 this.setState({user});
                 localStorage.setItem('user', user.uid);
+                localStorage.setItem('email', user.email);
             } else {
                 this.setState({user: null});
                 localStorage.removeItem('user');
