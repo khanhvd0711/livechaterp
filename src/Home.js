@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 // import logo from './logo.svg';
-import './App.css';
+import './Assets/Css/App.css';
 import firebaseApp from "./config/firebase";
 import Login from "./Login";
 import App from "./App";

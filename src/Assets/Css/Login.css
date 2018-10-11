@@ -1,0 +1,14 @@
+header{
+    background-color: #339dffe8;
+    padding: 15px 0;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+form{
+    border: 1px solid #eee;
+    padding: 15px;
+}

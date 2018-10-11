@@ -1,3 +1,6 @@
+.pull-left{
+    float: left;
+}
 .App {
     text-align: center;
 }
@@ -125,7 +128,7 @@ p {
 }
 
 .chat_body .box_chat div .card {
-    background-color: #0084ff;
+    background-color: #339dffe8;
     border-radius: 6px 15px 15px 6px;
     color: #fff;
     width: 100%;
@@ -143,13 +146,15 @@ p {
 }
 .chat_body .box_chat div .card i{
     float: left;
-    margin-right: 5px;
     font-size: 11px;
 }
-.chat_body .box_chat div .card div{
-    float: left;
+.chat_body .box_chat .name-key{
+    margin-right: 5px;
 }
-
+.chat_body .box_chat .message{
+    display: block;
+    clear: both;
+}
 .chat_footer {
     position: absolute;
     width: 100%;

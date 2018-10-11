@@ -38,10 +38,11 @@ class MessageList extends Component {
             return (
                 <div key={ index } className="card message ">
                     <div className="card-content">
-                        <i> <Message message = { message.time} /> : </i>
-                        <Message
-                            message = {message.message}
-                        />
+                        <div>
+                            <b className="name-key pull-left"> {message.userId} </b>
+                            <i className="pull-left"> ({ message.time} ):</i>
+                        </div>
+                        <div className="message">{message.message}</div>
                     </div>
                 </div>
             )
