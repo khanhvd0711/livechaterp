@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
-
+import firebaseApp from "../config/firebase";
 class Header extends Component {
+    componentWillUnmount(){
+        this.logout();
+    }
+
+    logout() {
+        firebaseApp.auth().signOut();
+    }
+
     render(){
         return (
             //<nav className="navbar">
@@ -16,7 +24,8 @@ class Header extends Component {
                         <img alt="test" src={'https://image-us.24h.com.vn/upload/1-2018/images/2018-03-25/1521987450-868-thuy-vi-3-1521984812-width650height813.jpg'}/>
                     </div>
                     <div className="spInfor">
-                        <p className="spName">Chat Room Vip▾</p>
+                        <p className="spName">Chat Room Vip▾  <button onClick={this.logout}>Đăng xuất</button></p>
+
                         <p className="spHotLine">0988 889 999</p>
                     </div>
                     <p className="logoNhanh">

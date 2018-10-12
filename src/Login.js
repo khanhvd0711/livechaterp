@@ -33,7 +33,6 @@ class Login extends Component {
             let dbCon = firebaseApp.database().ref('/users');
             dbCon.push({
                 email: this.state.email,
-                // password: this.state.password,
                 ipAddress: ip.address(),
                 time: new Date().toLocaleString(),
             });

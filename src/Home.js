@@ -30,7 +30,7 @@ class Home extends Component {
         firebaseApp.auth().onAuthStateChanged((user) => {
             if (user) {
                 this.setState({user});
-                localStorage.setItem('user', user.uid);
+                localStorage.setItem('userid', user.uid);
                 localStorage.setItem('email', user.email);
             } else {
                 this.setState({user: null});
