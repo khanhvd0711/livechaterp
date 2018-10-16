@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import logo from './logo.svg';
 import './Assets/Css/App.css';
 import firebaseApp from "./config/firebase";
 import Login from "./Login";
@@ -30,8 +29,10 @@ class Home extends Component {
         firebaseApp.auth().onAuthStateChanged((user) => {
             if (user) {
                 this.setState({user});
+                let $rs =  JSON.stringify(user); $rs = JSON.parse($rs);
                 localStorage.setItem('userid', user.uid);
                 localStorage.setItem('email', user.email);
+                localStorage.setItem('chatNhanhAuthenToken', $rs.stsTokenManager.accessToken);
             } else {
                 this.setState({user: null});
                 localStorage.removeItem('user');

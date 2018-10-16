@@ -1,0 +1,23 @@
+.loading{
+    display: none;
+}
+.loading.is{
+    fill: rgb(69, 165, 255);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 60px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.75);
+}
+.loading svg{
+    width: 150px;
+    display: inline-block;
+}

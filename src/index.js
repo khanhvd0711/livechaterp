@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './Assets/Css/index.css';
 import './Assets/Css/Login.css';
 import './Assets/Css/Bootstrap-3.3.5.min.css';
 import Home from './Home';
