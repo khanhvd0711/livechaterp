@@ -21,10 +21,12 @@ class MessageBox extends Component{
         if(e.keyCode === 13 && (e.target.value).trim() !== ''){
             e.preventDefault();
                 let ip = require("ip");
+                let date = new Date();
                 let dbCon = firebaseApp.database().ref('/chatlist');
                 dbCon.push({
                     message: (e.target.value).trim(),
-                    time: new Date().toLocaleString(),
+                    date: date.toLocaleDateString(),
+                    time: date.toLocaleTimeString(),
                     ipAddress: ip.address(),
                     email: localStorage.email
                 });

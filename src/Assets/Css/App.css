@@ -184,6 +184,7 @@ img{
 .currentMessenger{
     clear: both;
     float: right;
+    position: relative;
 }
 .blockUser{
     border-radius: 50%;
@@ -199,4 +200,13 @@ img{
 }
 .currentMessenger .card-content .blockText div, .currentMessenger .card-content .blockText b{
     width: 100%;
+}
+.currentMessenger .textTime{
+    position: absolute;
+    left: -52px;
+    bottom:5px;
+    color: #b6b1b1;
+}
+.chat_body .box_chat div .card .textTime{
+    color: #b6b1b1;
 }

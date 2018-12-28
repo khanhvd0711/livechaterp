@@ -26,7 +26,7 @@ class Header extends Component {
                     <div className="spInfor">
                         <p className="spName">Chat Room Vip▾  <button onClick={this.logout}>Đăng xuất</button></p>
 
-                        <p className="spHotLine">0988 889 999</p>
+                        <p className="spHotLine">{localStorage.email}</p>
                     </div>
                     <p className="logoNhanh">
                         <img src={'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png'}  alt="logo"/>

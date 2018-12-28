@@ -37,16 +37,18 @@ class MessageList extends Component {
     render(){
         let currentUser = firebaseApp.auth().currentUser.email;
         let messageNodes = this.state.chatlist.map((message, index) => {
+            // console.log(message);
             return (
                 <div key={ index } className={message.email === currentUser ? 'currentMessenger' : 'card'}>
                     <div className="blockText">
-                        {/*<b className="name-key pull-left"> {message.email} </b>*/}
-                        {/*<i className="pull-left"> ({ message.time} ):</i>*/}
+                        <b className="name-key pull-left"> {message.email} - </b>
+                        <i className="pull-left"> { message.date}</i>
                         <span className="message">{message.message}</span>
                     </div>
                     <div className="blockUser">
-                        <img alt="test" src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-1/p50x50/42119611_2266904666875334_2824307332060545024_n.jpg?_nc_cat=106&oh=a04fcaedf4f605c4746522e2fcb1605a&oe=5C5935E1"/>
+                        <img alt="test" src="https://image-us.24h.com.vn/upload/1-2018/images/2018-03-25/1521987450-868-thuy-vi-3-1521984812-width650height813.jpg"/>
                     </div>
+                    <span className="textTime">{message.time}</span>
                 </div>
             )
         });
