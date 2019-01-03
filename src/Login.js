@@ -46,9 +46,9 @@ class Login extends Component {
         firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
             let ip = require("ip");
             let dbCon = firebaseApp.database().ref('/users');
-            let $rs =  JSON.stringify(u.user); $rs = JSON.parse($rs);
+            let rs =  JSON.stringify(u.user); rs = JSON.parse(rs);
             dbCon.push({
-                tokens: $rs.stsTokenManager.accessToken,
+                tokens: rs.stsTokenManager.accessToken,
                 email: this.state.email,
                 ipAddress: ip.address(),
                 time: new Date().toLocaleString(),
@@ -62,7 +62,7 @@ class Login extends Component {
     render() {
         return (
             <main className="">
-                <header>Live Chat Xin Chào Quý Khách</header>
+                <header>Live Chat</header>
                 <div className="col-md-push-4 col-md-4 col-sm-6 col-xs-12">
                     <Loading/>
                     <form id="formLogin">
@@ -73,11 +73,11 @@ class Login extends Component {
                             </ul>
                         </div>
                         <div className="form-group">
-                            <label>Email address</label>
+                            <label>Địa chỉ email</label>
                             <input value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" />
                         </div>
                         <div className="form-group">
-                            <label>Password</label>
+                            <label>Mật khẩu</label>
                             <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="password" placeholder="Password" />
                         </div>
                         <div className="form-group text-center">
