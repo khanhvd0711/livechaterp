@@ -129,7 +129,7 @@ img{
     clear: both;
 }
 .chat_header{
-    min-height: 66px;
+    min-height: 44px;
 }
 .chat_footer {
     position: fixed;
@@ -188,6 +188,7 @@ img{
 .box_chat > div{
     float: left;
     width: 100%;
+    padding: 5px 0 0 0;
     max-height: 280px;
     overflow-y: auto;
 }
@@ -229,24 +230,19 @@ img{
 .blockText .datetime{
     font-size: 11px;
 }
-@media screen and (max-width: 768px) {
-    .chat_body .box_chat{
-        height: 900px;
-    }
-}
 @media screen and (max-width: 480px) {
     .chat_body .box_chat{
-        height: 260px;
+        height: 100%;
     }
 }
 @media screen and (max-width: 380px) {
     .chat_body .box_chat{
-        height: 530px;
+        height: 100%;
     }
 }
 
 @media screen and (max-width: 325px) {
     .chat_body .box_chat{
-        height: 450px;
+        height: 100%;
     }
 }
