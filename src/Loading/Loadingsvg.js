@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../Assets/Css/Loading.css';
-import firebaseApp from "../config/firebase";
 
 class Loadingsvg extends Component {
     render(){

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import firebaseApp from "../config/firebase";
+// import {Link} from "react-router-dom";
 class Header extends Component {
     componentWillUnmount(){
         this.logout();
@@ -24,7 +25,10 @@ class Header extends Component {
                         <img alt="test" src={'https://image-us.24h.com.vn/upload/1-2018/images/2018-03-25/1521987450-868-thuy-vi-3-1521984812-width650height813.jpg'}/>
                     </div>
                     <div className="spInfor">
-                        <p className="spName">Chat Room Vip▾  <button onClick={this.logout}>Đăng xuất</button></p>
+                        <p className="spName">Chat Room▾  <button onClick={this.logout}>
+                            {/*<Link className="button-inv" to="/login">Đăng xuất</Link>*/}
+                            Đăng xuất
+                        </button></p>
 
                         <p className="spHotLine">{localStorage.email}</p>
                     </div>

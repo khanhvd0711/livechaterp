@@ -3,6 +3,7 @@ import './Assets/Css/App.css';
 import firebaseApp from "./config/firebase";
 import Login from "./Login";
 import App from "./App";
+import {BrowserRouter, Route, Redirect, Switch} from "react-router-dom";
 
 class Home extends Component {
 
@@ -12,6 +13,7 @@ class Home extends Component {
             user: {}
         }
     }
+
     componentWillMount() {
         this.clear();
     }
@@ -20,7 +22,7 @@ class Home extends Component {
         this.authListener();
     }
 
-    clear(){
+    clear() {
         this.setState({user: null});
         localStorage.removeItem('user');
     }
@@ -29,7 +31,8 @@ class Home extends Component {
         firebaseApp.auth().onAuthStateChanged((user) => {
             if (user) {
                 this.setState({user});
-                let $rs =  JSON.stringify(user); $rs = JSON.parse($rs);
+                let $rs = JSON.stringify(user);
+                $rs = JSON.parse($rs);
                 localStorage.setItem('userid', user.uid);
                 localStorage.setItem('email', user.email);
                 localStorage.setItem('chatNhanhAuthenToken', $rs.stsTokenManager.accessToken);
@@ -39,7 +42,20 @@ class Home extends Component {
             }
         });
     }
+
     render() {
+        // return (
+        //     <BrowserRouter>
+        //         <Switch>
+        //             <Route path="/" exact render={() => (
+        //                 this.state.user ? (<App/>) : (<Redirect to="/login"/>)
+        //             )}/>
+        //             <Route path="/login" exact render={() => (
+        //                 this.state.user ? (<Redirect to="/"/>) : (<Login/>)
+        //             )}/>
+        //         </Switch>
+        //     </BrowserRouter>
+        // );
         return (
             <div>
                 {this.state.user ? (<App/>) : (<Login/>)}

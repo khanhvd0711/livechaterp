@@ -40,7 +40,7 @@ class MessageBox extends Component{
             <form>
                 <textarea
                     className="textarea"
-                    placeholder="Type a message"
+                    placeholder="Gõ vào đây và nhấn <enter>"
                     cols="100"
                     onChange={this.onChange}
                     onKeyUp={this.onKeyup}

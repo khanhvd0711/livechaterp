@@ -20,11 +20,11 @@ class Login extends Component {
     }
 
     convertMessage($text) {
-       if ($text == 'The email address is badly formatted.'){
+       if ($text === 'The email address is badly formatted.'){
             return 'Địa chỉ email bị sai định dạng !';
        }
-       else if ($text == 'The password is invalid or the user does not have a password.'){
-            return 'Mật khẩu không hợp lệ quý khách vui lòng kiểm tra lại mật khẩu !';
+       else if ($text === 'The password is invalid or the user does not have a password.'){
+            return 'Mật khẩu không hợp lệ, vui lòng kiểm tra lại mật khẩu !';
        }
     }
 
