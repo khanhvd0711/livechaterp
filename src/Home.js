@@ -3,7 +3,7 @@ import './Assets/Css/App.css';
 import firebaseApp from "./config/firebase";
 import Login from "./Login";
 import App from "./App";
-import {BrowserRouter, Route, Redirect, Switch} from "react-router-dom";
+// import {BrowserRouter, Route, Redirect, Switch} from "react-router-dom";
 
 class Home extends Component {
 

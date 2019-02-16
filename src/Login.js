@@ -81,8 +81,8 @@ class Login extends Component {
                             <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="password" placeholder="Password" />
                         </div>
                         <div className="form-group text-center">
-                            <button type="submit" onClick={this.login} className="btn btn-primary">Đăng nhập</button>
                             <button onClick={this.signup} style={{marginLeft: '25px'}} className="btn btn-success">Đăng ký</button>
+                            <button type="submit" onClick={this.login} className="btn btn-primary">Đăng nhập</button>
                         </div>
                     </form>
                 </div>

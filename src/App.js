@@ -25,17 +25,41 @@ class App extends Component {
         //         </div>
         //     </BrowserRouter>
         // );
+        // return (
+        //     <div className="nChat">
+        //         <div className="chat_header">
+        //             <Header/>
+        //         </div>
+        //         <div className="chat_body">
+        //             <div className="box_chat">
+        //                 <MessageList db={firebaseApp}/>
+        //             </div>
+        //         </div>
+        //         <div className="chat_footer">
+        //             <MessageBox/>
+        //         </div>
+        //     </div>
+        // );
+        // return (
+        //     <div className="nChat">
+        //         <div className="chat_header">
+        //             <Header/>
+        //         </div>
+        //         <div className="chat_body">
+        //             <div className="box_chat">
+        //                 <MessageList db={firebaseApp}/>
+        //             </div>
+        //         </div>
+        //         <div className="chat_footer">
+        //             <MessageBox/>
+        //         </div>
+        //     </div>
+        // );
         return (
-            <div className="nChat">
-                <div className="chat_header">
+            <div className="container clearfix">
+                <div className="chat">
                     <Header/>
-                </div>
-                <div className="chat_body">
-                    <div className="box_chat">
-                        <MessageList db={firebaseApp}/>
-                    </div>
-                </div>
-                <div className="chat_footer">
+                    <MessageList db={firebaseApp}/>
                     <MessageBox/>
                 </div>
             </div>

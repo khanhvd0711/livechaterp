@@ -38,14 +38,17 @@ class MessageBox extends Component{
     render(){
         return(
             <form>
-                <textarea
-                    className="textarea"
-                    placeholder="Gõ vào đây và nhấn <enter>"
-                    cols="100"
-                    onChange={this.onChange}
-                    onKeyUp={this.onKeyup}
-                    value={this.state.chatlist}>
-                </textarea>
+                <div className="chat-message clearfix">
+                    <textarea
+                        id="message-to-send"
+                        className="textarea"
+                        placeholder="Gõ vào đây và nhấn <enter>"
+                        onChange={this.onChange}
+                        onKeyUp={this.onKeyup}
+                        value={this.state.chatlist}>
+                    </textarea>
+                    <button>Gửi</button>
+                </div>
             </form>
         )
     }

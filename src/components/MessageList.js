@@ -49,25 +49,39 @@ class MessageList extends Component {
         let currentUser = firebaseApp.auth().currentUser.email;
         let messageNodes = this.state.chatlist.map((message, index) => {
             if(currentUser){
+                // return (
+                //     <div key={ index } className={message.email === currentUser ? 'currentMessenger' : 'card'}>
+                //         <div className="blockText">
+                //             <b className="name-key pull-left"> {message.email} - </b>
+                //             <i className="pull-left datetime"> { message.date}</i>
+                //             <span className="message">{message.message}</span>
+                //         </div>
+                //
+                //         <div className="blockUser">
+                //             <img alt="test" src="https://image-us.24h.com.vn/upload/1-2018/images/2018-03-25/1521987450-868-thuy-vi-3-1521984812-width650height813.jpg"/>
+                //         </div>
+                //         <span className="textTime">{message.time}</span>
+                //     </div>
+                // )
                 return (
-                    <div key={ index } className={message.email === currentUser ? 'currentMessenger' : 'card'}>
-                        <div className="blockText">
-                            <b className="name-key pull-left"> {message.email} - </b>
-                            <i className="pull-left datetime"> { message.date}</i>
-                            <span className="message">{message.message}</span>
-                        </div>
+                    <li key={ index } className="clearfix">
+                        <div className={message.email === currentUser ? 'message-data align-right' : 'message-data'}>
+                            <span className="message-data-time" >{message.time}</span> &nbsp; &nbsp;
+                            <span className="message-data-name" >{message.email}</span>
 
-                        <div className="blockUser">
-                            <img alt="test" src="https://image-us.24h.com.vn/upload/1-2018/images/2018-03-25/1521987450-868-thuy-vi-3-1521984812-width650height813.jpg"/>
                         </div>
-                        <span className="textTime">{message.time}</span>
-                    </div>
+                        <div className={message.email === currentUser ? 'message other-message float-right' : 'message my-message'}>
+                            {message.message}
+                        </div>
+                    </li>
                 )
             }
         });
         return (
-            <div className="collection" ref="messageList">
-                {messageNodes}
+            <div className="chat-history collection" ref="messageList">
+                <ul>
+                    {messageNodes}
+                </ul>
             </div>
         );
     }
